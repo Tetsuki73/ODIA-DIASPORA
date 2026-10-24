@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 43, 24, 16;
+  --background-rgb: 249, 241, 231;
+  --page-rgb: 250, 244, 236;
+  --muted-rgb: 90, 70, 54;
+  --orange-rgb: 198, 90, 26;
+  --orange-dark-rgb: 169, 74, 18;
+  --orange-tint-rgb: 243, 227, 211;
+  --border-light-rgb: 232, 213, 192;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: var(--font-inter), sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(var(--orange-rgb), 0.2);
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-playfair), serif;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    font-variation-settings: 'opsz' 32;
+  }
+
+  p {
+    font-family: var(--font-inter), sans-serif;
+    color: rgb(var(--muted-rgb));
+  }
+
+  a {
+    transition: color 200ms ease;
+  }
+
+  .focus-ring:focus-visible,
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid rgb(var(--orange-rgb));
+    outline-offset: 3px;
+  }
+
+  .section-shell {
+    @apply mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-cream {
+    background-color: rgb(var(--background-rgb));
+  }
+
+  .bg-card {
+    background-color: rgba(var(--page-rgb), 0.96);
+  }
+}
